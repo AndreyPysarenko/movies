@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const HeaderStyled = styled.header`
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 export const NavStyled = styled.nav`

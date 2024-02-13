@@ -35,6 +35,22 @@ export const ListGenres = styled.ul`
   gap: 12px;
 `;
 
+export const ItemGenres = styled.li`
+  display: flex;
+  flex-shrink: 1;
+
+  &:not(:first-child) {
+    &:before {
+      content: '';
+      display: block;
+      height: auto;
+      width: 1px;
+      background-color: var(--color-pagination);
+      margin-right: 6px;
+    }
+  }
+`;
+
 export const TitleListInfo = styled.h3`
   font-weight: 600;
   font-size: 22px;

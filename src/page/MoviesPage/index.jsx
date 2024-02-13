@@ -53,14 +53,14 @@ const Movies = () => {
   };
 
   return (
-    <main>
+    <>
       <Form searchMovies={handleSetSearchQuery} />
       {loading && <Loader />}
       {errorMessage && (
         <TitleListInfo>Please enter the movie name!</TitleListInfo>
       )}
       {searchFilms && <PopularMovies films={searchFilms} />}
-    </main>
+    </>
   );
 };
 

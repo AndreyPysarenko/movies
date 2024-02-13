@@ -6,7 +6,7 @@ export const List = styled.ul`
   gap: 25px;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px 0;
+  margin: 40px 0;
 `;
 
 export const Item = styled.li`

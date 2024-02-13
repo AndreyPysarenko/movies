@@ -9,6 +9,7 @@ import {
   ContainerMovieInfo,
   GoBackLink,
   ImgMovie,
+  ItemGenres,
   ListGenres,
   ListInfo,
   SpanSvg,
@@ -72,7 +73,7 @@ const MovieDetails = () => {
             <h2>Genres</h2>
             <ListGenres>
               {genres.map(({ id, name }) => (
-                <li key={id}>{name}</li>
+                <ItemGenres key={id}>{name}</ItemGenres>
               ))}
             </ListGenres>
           </ContainerDescription>

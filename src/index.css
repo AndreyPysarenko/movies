@@ -3,6 +3,8 @@
 :root {
   --bg-color: rgba(4, 4, 4, 0.8);
   --main-color: #ffffff;
+  --color-pagination: #efede8;
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -56,4 +58,43 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.swiper-box {
+  padding: 0 15px 45px !important;
+}
+
+.swiper-box .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-box .swiper-pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(239, 237, 232);
+}
+
+.swiper-box .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-pagination);
+  width: 9px;
+  height: 9px;
+  outline: 1px solid var(--color-pagination);
+  outline-offset: 2px;
+}
+
+.swiper-box .swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
+}
+
+.swiper-slide {
+  position: relative;
+  cursor: pointer;
+  height: 410px !important;
+  margin-top: 16px !important;
+  margin-right: 16px !important;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 237, 232, 0.2);
 }
