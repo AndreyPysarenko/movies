@@ -3,7 +3,7 @@ import Loader from 'components/Loader';
 import Notiflix from 'notiflix';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { List } from './Reviews.styled';
+import { List, TextReviews, TitleReviews } from './Reviews.styled';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -35,7 +35,7 @@ const Reviews = () => {
           <List>
             {reviews.map(({ id, author, content }) => (
               <li key={id}>
-                <h2>Author: {author}</h2>
+                <TitleReviews>Author: {author}</TitleReviews>
                 <p>{content}</p>
               </li>
             ))}
@@ -43,7 +43,7 @@ const Reviews = () => {
         </div>
       )}
       {reviews.length === 0 && (
-        <div>We don't have any reviews for this movie</div>
+        <TextReviews>We don't have any reviews for this movie</TextReviews>
       )}
     </>
   );

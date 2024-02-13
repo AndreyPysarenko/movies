@@ -1,3 +1,4 @@
+import { Container, Title } from 'Index.styled';
 import { fetchGetTrending } from 'api/movieDbApi';
 import Loader from 'components/Loader';
 import PopularMovies from 'components/PopularMovies';
@@ -26,11 +27,11 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
-      <h1>Trending today</h1>
+    <Container>
+      <Title>Trending today</Title>
       <PopularMovies films={films} />
       {loading && <Loader />}
-    </main>
+    </Container>
   );
 };
 

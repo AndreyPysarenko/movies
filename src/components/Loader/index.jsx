@@ -1,17 +1,25 @@
-import { ThreeDots } from 'react-loader-spinner';
+import { ThreeCircles } from 'react-loader-spinner';
+import { Backdrop } from './Loader.styled';
 
 const Loader = () => {
   return (
-    <ThreeDots
-      height="80"
-      width="80"
-      radius="9"
-      color="#4fa94d"
-      ariaLabel="three-dots-loading"
-      wrapperStyle={{ justifyContent: 'center' }}
-      wrapperClassName=""
-      visible={true}
-    />
+    <Backdrop>
+      <ThreeCircles
+        height="100"
+        width="100"
+        radius="48"
+        color="rgba(255, 255, 255, 0.7)"
+        ariaLabel="three-circles-loading"
+        wrapperStyle={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}
+        wrapperClassName=""
+        visible={true}
+      />
+    </Backdrop>
   );
 };
 

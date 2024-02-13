@@ -1,5 +1,10 @@
 @import-normalize; /* bring in normalize.css styles */
 
+:root {
+  --bg-color: rgba(4, 4, 4, 0.8);
+  --main-color: #ffffff;
+}
+
 html {
   box-sizing: border-box;
   width: 100vw;
@@ -20,7 +25,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: rgb(218, 219, 219);
+  background-color: var(--bg-color);
+  color: var(--main-color);
   font-size: 18px;
 }
 
@@ -33,4 +39,21 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
 }

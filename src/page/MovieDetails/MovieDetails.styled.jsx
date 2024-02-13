@@ -3,62 +3,102 @@ import { NavLink } from 'react-router-dom';
 
 export const ContainerMovieInfo = styled.div`
   display: flex;
-  margin: 25px;
+  justify-content: center;
   gap: 24px;
+  margin-bottom: 20px;
+`;
+
+export const ImgMovie = styled.img`
+  width: 300px;
+  height: 450px;
+
+  object-fit: cover;
+  object-position: center center;
+  background: linear-gradient(
+      180deg,
+      rgba(18, 20, 23, 0.5) 2.5%,
+      rgba(18, 20, 23, 0) 41.07%
+    ),
+    #f3f3f2;
+  box-shadow: 0 0 8px 1px #f3f3f2;
+`;
+
+export const ContainerDescription = styled.div`
+  max-width: 700px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
 `;
 
 export const ListGenres = styled.ul`
   display: inline-flex;
   gap: 12px;
-  list-style: none;
-  margin: 0;
-  padding: 0;  
+`;
+
+export const TitleListInfo = styled.h3`
+  font-weight: 600;
+  font-size: 22px;
+  margin: 20px 0;
+  text-align: center;
 `;
 
 export const ListInfo = styled.ul`
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  list-style: none;
-  margin: 0;
-  padding: 0; 
-`;
-
-export const LinkInfo = styled(NavLink)`
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  color: #191d1e;
-
-  &:hover {
-    color: tomato;
-  }
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
 `;
 
 export const GoBackLink = styled(NavLink)`
-  text-decoration: none;
-`;
-
-export const Button = styled.button`
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
-  padding: 8px 8px;
-  border-radius: 2px;
-  background-color: #3f51b5;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: #fff;
-  border: 0;
-
-  cursor: pointer;
-  font: inherit;
   font-weight: 600;
   font-size: 20px;
-  min-width: 150px;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  height: 40px;
+  width: 140px;
 
-  &:hover {
-    background-color: #303f9f;
+  color: var(--main-color);
+  text-shadow: 0px 4px 4px rgba(250, 250, 250, 0.25);
+
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+    opacity: 0.5;
+    height: 100%;
+    width: 2px;
+    content: '';
+    background: var(--main-color);
+    transition: all 0.3s;
   }
+
+  &::before {
+    left: 0px;
+    top: 0px;
+  }
+
+  &::after {
+    right: 0px;
+    bottom: 0px;
+  }
+
+  &:hover&::before,
+  &:hover&::after,
+  &:focus&::before,
+  &:focus&::after {
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+  }
+`;
+
+export const SpanSvg = styled.span`
+  width: 22px;
+  height: 22px;
 `;

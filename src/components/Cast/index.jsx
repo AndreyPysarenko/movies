@@ -3,7 +3,7 @@ import Loader from 'components/Loader';
 import Notiflix from 'notiflix';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { ListCast, TextCast } from './Cast.styled';
+import { Img, ItemCast, ListCast, TextCast } from './Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -33,15 +33,14 @@ const Cast = () => {
       {loading && <Loader />}
       <ListCast>
         {cast.map(({ id, profile_path, original_name, name, character }) => (
-          <li key={id}>
-            <img
-              width="200px"
+          <ItemCast key={id}>
+            <Img
               src={`https://image.tmdb.org/t/p/w500${profile_path}`}
               alt={original_name}
             />
             <TextCast>{name}</TextCast>
             <TextCast>Character: {character}</TextCast>
-          </li>
+          </ItemCast>
         ))}
       </ListCast>
       {cast.length === 0 && <div>We don't have any cast for this movie</div>}

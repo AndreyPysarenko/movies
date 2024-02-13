@@ -1,17 +1,21 @@
 import { fetchGetMovieDetails } from 'api/movieDbApi';
-import { HiArrowUturnLeft } from 'react-icons/hi2';
+import { HiArrowSmallLeft } from 'react-icons/hi2';
 import Loader from 'components/Loader';
 import Notiflix from 'notiflix';
 import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import {
-  Button,
+  ContainerDescription,
   ContainerMovieInfo,
   GoBackLink,
-  LinkInfo,
+  ImgMovie,
   ListGenres,
   ListInfo,
+  SpanSvg,
+  TitleListInfo,
 } from './MovieDetails.styled';
+import { Container } from 'Index.styled';
+import { Link } from 'components/Header/Header.styled';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -49,28 +53,19 @@ const MovieDetails = () => {
   } = movieInfo || {};
 
   return (
-    <>
-      <GoBackLink to={location.state?.from ?? '/'}>
-        <Button type="button">
-          <span>
-            <HiArrowUturnLeft size="22" />
-          </span>
-          Go back
-        </Button>
-      </GoBackLink>
+    <Container>
       {loading && <Loader />}
 
       {movieInfo && (
         <ContainerMovieInfo>
-          <img
-            width="300px"
+          <ImgMovie
             src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             alt={original_title}
           />
-          <div>
-            <h1>
+          <ContainerDescription>
+            <h2>
               {title} ({release_date.slice(0, 4)})
-            </h1>
+            </h2>
             <p>User score: {`${Math.ceil(vote_average * 10)}%`}</p>
             <h2>Overview</h2>
             <p>{overview}</p>
@@ -80,26 +75,36 @@ const MovieDetails = () => {
                 <li key={id}>{name}</li>
               ))}
             </ListGenres>
-          </div>
+          </ContainerDescription>
+          <GoBackLink to={location.state?.from ?? '/'}>
+            <SpanSvg>
+              <HiArrowSmallLeft size="22" />
+            </SpanSvg>
+            Go back
+          </GoBackLink>
         </ContainerMovieInfo>
       )}
       <hr />
       <div>
-        <h3>Additional information</h3>
+        <TitleListInfo>Additional information</TitleListInfo>
         <ListInfo>
           <li>
-            <LinkInfo to="cast" state={location.state}>Cast</LinkInfo>
+            <Link to="cast" state={location.state}>
+              Cast
+            </Link>
           </li>
           <li>
-            <LinkInfo to="reviews" state={location.state}>Reviews</LinkInfo>
+            <Link to="reviews" state={location.state}>
+              Reviews
+            </Link>
           </li>
         </ListInfo>
         <hr />
         <Suspense>
-        <Outlet />
-        </Suspense>       
+          <Outlet />
+        </Suspense>
       </div>
-    </>
+    </Container>
   );
 };
 

@@ -3,6 +3,7 @@ import Form from 'components/Form';
 import Loader from 'components/Loader';
 import PopularMovies from 'components/PopularMovies';
 import Notiflix from 'notiflix';
+import { TitleListInfo } from 'page/MovieDetails/MovieDetails.styled';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -55,7 +56,9 @@ const Movies = () => {
     <main>
       <Form searchMovies={handleSetSearchQuery} />
       {loading && <Loader />}
-      {errorMessage && <p>Please enter the movie name!</p>}
+      {errorMessage && (
+        <TitleListInfo>Please enter the movie name!</TitleListInfo>
+      )}
       {searchFilms && <PopularMovies films={searchFilms} />}
     </main>
   );

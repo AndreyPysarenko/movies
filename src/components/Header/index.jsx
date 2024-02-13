@@ -1,14 +1,18 @@
-import { HeaderStyled, Link } from './Header.styled';
+import { Container } from 'Index.styled';
+import { HeaderStyled, Link, NavStyled } from './Header.styled';
 
 const Header = () => {
   return (
     <HeaderStyled>
-      <nav>
-        <Link to="/" end>
-          Home
-        </Link>
-        <Link to="/movies">Movies</Link>
-      </nav>
+      <Container>
+        <NavStyled>
+          <Link to="/" end>
+            Home
+          </Link>
+          <Link to="/movies">Movies</Link>
+        </NavStyled>
+        <hr />
+      </Container>
     </HeaderStyled>
   );
 };
