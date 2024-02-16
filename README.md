@@ -5,8 +5,8 @@ The Movies Project is a movie search website where you can find out the movie's 
 ## Features of the project
 
 The site consists of three Home and Movies pages. 
-Home: Displays the 11 most popular movies 
-Movies: search for a movie by title
+- Home: Displays the 11 most popular movies 
+- Movies: search for a movie by title
 
 ## Technologies used
 
