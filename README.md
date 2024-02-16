@@ -15,7 +15,7 @@ Movies: search for a movie by title
 3. Styled-components
 4. Axios for API requests
 5. Notiflix for notifications
-6. Swipe
+6. Swiper
 
 ## Getting Started
 
